@@ -2032,10 +2032,20 @@ function renderReview() {
         const uAns = userAnswers[idx];
         let badgeColor = q.scoreObtained >= 3 ? "bg-emerald-100 text-emerald-800" : (q.scoreObtained >= 1 ? "bg-amber-100 text-amber-800" : "bg-rose-100 text-rose-800");
         let fLabel = q.f === 'ml' ? 'Ən Çox/Ən Az Ehtimal' : (q.f === 'rk' ? 'Sıralama (1-4)' : 'Dərəcələndirmə');
+
         
-        let selTxt = uAns ? (q.f==='ml' ? `Ən Çox: <b>${uAns.m}</b> | Ən Az: <b>${uAns.l}</b>` : (q.f==='rk' ? `A:${uAns.A}, B:${uAns.B}, C:${uAns.C}, D:${uAns.D}` : `A:${uAns.A}, B:${uAns.B}, C:${uAns.C}, D:${uAns.D}, E:${uAns.E}`)) : "<span class='text-rose-500'>Cavablandırılmayıb</span>";
+        
+        const rkLabels = {1:'ən effektiv', 2:'2-ci effektiv', 3:'3-cü effektiv', 4:'ən effektsiz'};
+        const rtLabels = {ve:'çox-effektiv', e:'effektiv', se:'cüzi-effektiv', ie:'qeyri-effektiv', cp:'əks-effektiv'};
+        
+        let selTxt = uAns ? (
+            q.f==='ml' ? `Ən effektiv: <b>${uAns.m}</b> | Ən effektisiz: <b>${uAns.l}</b>` 
+            : (q.f==='rk' ? `A:${rkLabels[uAns.A]}, B:${rkLabels[uAns.B]}, C:${rkLabels[uAns.C]}, D:${rkLabels[uAns.D]}` 
+            : `A:${rtLabels[uAns.A]}, B:${rtLabels[uAns.B]}, C:${rtLabels[uAns.C]}, D:${rtLabels[uAns.D]}, E:${rtLabels[uAns.E]}`)
+        ) : "<span class='text-rose-500'>Cavablandırılmayıb</span>";
 
 
+        
         
 let optionsHtml = q.o.map(opt => {
             let clabel = '';
