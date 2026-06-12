@@ -2035,19 +2035,32 @@ function renderReview() {
         
         let selTxt = uAns ? (q.f==='ml' ? `Ən Çox: <b>${uAns.m}</b> | Ən Az: <b>${uAns.l}</b>` : (q.f==='rk' ? `A:${uAns.A}, B:${uAns.B}, C:${uAns.C}, D:${uAns.D}` : `A:${uAns.A}, B:${uAns.B}, C:${uAns.C}, D:${uAns.D}, E:${uAns.E}`)) : "<span class='text-rose-500'>Cavablandırılmayıb</span>";
 
-        let optionsHtml = q.o.map(opt => {
+
+        
+let optionsHtml = q.o.map(opt => {
             let clabel = '';
+            let bgClass = 'bg-slate-50 border-slate-100';
             if(q.f==='ml') {
                 if(opt.v==='m') clabel = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-100 text-emerald-700">Ən Effektiv Cavab</span>';
                 if(opt.v==='l') clabel = '<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-rose-100 text-rose-700">Ən Az Effektiv Cavab</span>';
+                if (uAns) {
+                    if (opt.v==='m') bgClass = (uAns.m === opt.k) ? 'bg-emerald-50 border-emerald-200' : 'bg-rose-50 border-rose-200';
+                    else if (opt.v==='l') bgClass = (uAns.l === opt.k) ? 'bg-emerald-50 border-emerald-200' : 'bg-rose-50 border-rose-200';
+                }
             } else if (q.f==='rk') {
                 clabel = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-indigo-100 text-indigo-700">Doğru Sıra: ${opt.v}</span>`;
+                if (uAns) {
+                    bgClass = (uAns[opt.k] == opt.v) ? 'bg-emerald-50 border-emerald-200' : 'bg-rose-50 border-rose-200';
+                }
             } else {
                 const trans = {ve:'Çox Effektiv', e:'Effektiv', se:'Azca Effektiv', ie:'Qeyri-effektiv', cp:'Əks-effektiv'};
                 clabel = `<span class="px-2 py-0.5 rounded text-[10px] font-bold bg-purple-100 text-purple-700">Doğru: ${trans[opt.v]}</span>`;
+                if (uAns) {
+                    bgClass = (uAns[opt.k] == opt.v) ? 'bg-emerald-50 border-emerald-200' : 'bg-rose-50 border-rose-200';
+                }
             }
             return `
-            <div class="p-3 bg-slate-50 border border-slate-100 rounded-lg">
+            <div class="p-3 ${bgClass} border rounded-lg">
                 <div class="flex items-start gap-2 mb-1.5">
                     <span class="font-bold text-slate-700 bg-white border border-slate-200 w-5 h-5 flex items-center justify-center rounded text-[10px] shrink-0">${opt.k}</span>
                     <p class="text-xs font-semibold text-slate-800 leading-snug">${opt.t}</p>
@@ -2057,6 +2070,8 @@ function renderReview() {
             </div>`;
         }).join('');
 
+
+        
         const card = document.createElement('div');
         card.className = "border border-slate-200 rounded-xl overflow-hidden shadow-sm";
         card.innerHTML = `
