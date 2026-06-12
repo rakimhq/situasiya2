@@ -1973,27 +1973,29 @@ function finishExam() {
     let totalScore = 0;
     flatQuestions.forEach((q, idx) => {
         const uAns = userAnswers[idx];
-        let score = 0;
+        
+
+        
+let score = 0;
         
         if (uAns) {
             if (q.f === 'ml') {
                 const cMost = q.o.find(o => o.v === 'm').k;
                 const cLeast = q.o.find(o => o.v === 'l').k;
-                if (uAns.m === cMost && uAns.l === cLeast) score = 3;
-                else if (uAns.m === cMost || uAns.l === cLeast) score = 1;
+                if (uAns.m === cMost) score += 1;
+                if (uAns.l === cLeast) score += 1;
             } else if (q.f === 'rk') {
                 let corrects = 0;
                 q.o.forEach(opt => { if(uAns[opt.k] == opt.v) corrects++; });
-                if(corrects === 4) score = 3;
-                else if(corrects === 2) score = 1;
+                score = corrects;
             } else if (q.f === 'rt') {
                 let corrects = 0;
                 q.o.forEach(opt => { if(uAns[opt.k] == opt.v) corrects++; });
-                if(corrects === 5) score = 4;
-                else if(corrects >= 3) score = 2;
-                else if(corrects >= 1) score = 1;
+                score = corrects;
             }
         }
+
+        
         q.scoreObtained = score;
         totalScore += score;
     });
