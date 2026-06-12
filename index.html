@@ -1587,6 +1587,240 @@ const EXAMS_DATA = [
                 }
             ]
         }, // <-- Baxın bu bağlayıcı mötərizələr və buradakı VERGÜL əskik idi!
+
+{
+    id: 8,
+    title: "İmtahan 8 (Orta Səviyyə Menecment)",
+    scenarios: [
+        {
+            b: "Ssenari 1",
+            t: "Layihə Meneceri (Şəhər İnfrastrukturu Agentliyi)",
+            d: "Siz dövlət sektorunda fəaliyyət göstərən Şəhər İnfrastrukturu Agentliyinin Layihə Meneceriniz. Hazırda rəhbərlik etdiyiniz layihə - şəhərin mərkəzi rayonlarında 45 km uzunluğunda yeni nəqliyyat dəhlizinin (metro xətti uzantısı) tikintisidir. Layihənin büdcəsi 210 milyon manat, müddəti 4 ildir və 320 nəfərlik qarışıq komanda (daxili işçilər + podratçı mütəxəssislər) cəlb olunub. Siz birbaşa Agentlik Direktoruna hesabat verirsiniz və layihənin gündəlik icrasına, vaxt cədvəlinə, büdcə nəzarətinə və maraqlı tərəflərlə (sakinlər, podratçılar, digər dövlət qurumları) əlaqələrə cavabdehsiniz.",
+            qs: [
+                {
+                    qT: "Situasiya 1: Podratçının Gecikməsi və Ardıcıl Tapşırıqlar",
+                    qD: "Əsas tunel qazma podratçısı (subcontractor) gözlənilməz geoloji şəraitə görə işin 6 həftə geriləməsini bildirir. Bu, ardıcıl asılı olan 3 digər podratçının (relslərin döşənməsi, elektrik təchizatı, stansiya tikintisi) işə başlama tarixlərinə birbaşa təsir edəcək. Direktor sizdən növbəti həftə ümumi vaxt cədvəlinin yenilənmiş versiyasını və gecikmənin qarşısının necə alınacağını izah edən hesabat tələb edir.",
+                    c: "Layihə Planlaşdırması və Asılılıq İdarəetməsi",
+                    f: "ml",
+                    o: [
+                        { k: "A", t: "Dərhal kritik yol (critical path) təhlilini yeniləyin, gecikmənin ardıcıl podratçılara real təsirini hesablayın və paralelləşdirmə (fast-tracking) imkanlarını (məs. elektrik təchizatı işlərinin qismən eyni vaxtda başlaması) araşdırın, real ssenarini Direktora təqdim edin.", v: "m" },
+                        { k: "B", t: "Geoloji podratçıya 6 həftəlik gecikməni 3 həftəyə endirmək üçün əlavə resurs (gecə növbələri, əlavə avadanlıq) tələb edin və bunun əlavə xərcini büdcə ehtiyat fondundan ödəməyi təklif edin, ardıcıl podratçıların cədvəlini olduğu kimi saxlayın.", v: "i" },
+                        { k: "C", t: "Direktora hələlik 'vəziyyət qiymətləndirilir' deyin və real rəqəmləri yalnız geoloji məsələ tam həll olunduqdan sonra (təxminən 2 həftəyə) təqdim edin ki, 'yarımçıq' məlumat verməyəsiniz.", v: "l" },
+                        { k: "D", t: "Ardıcıl podratçıların hər birinə ayrıca zəng edərək onlardan öz qrafiklərini 6 həftə sürüşdürmələrini xahiş edin və bunu Direktora 'həll olundu' kimi təqdim edin, əlavə xərc təsirini hesablamadan.", v: "i" }
+                    ]
+                },
+                {
+                    qT: "Situasiya 2: Yerli Sakinlərin Etirazı",
+                    qD: "Tikinti sahəsinin yaxınlığındakı yaşayış massivinin sakinləri gecə saatlarında (22:00-06:00) aparılan beton tökmə işlərindən şikayət edərək yerli media və bələdiyyəyə müraciət edib. Bu işlər layihənin kritik mərhələsindədir və gündüz dayandırılması 3 həftəlik gecikmə yaradacaq. Bələdiyyə sizdən 48 saat ərzində izahat tələb edir.",
+                    c: "Maraqlı Tərəflərlə Əlaqələr (Stakeholder Management)",
+                    f: "rt",
+                    o: [
+                        { k: "A", t: "Sakinlərlə açıq görüş təşkil edin, gecə işlərinin texniki zərurətini izah edin, səs-küyü azaltmaq üçün konkret tədbirlər (akustik ekranlar, iş saatlarının qismən qısaldılması) təklif edin və bələdiyyəyə bu planı yazılı şəkildə təqdim edin.", v: "ve" },
+                        { k: "B", t: "Bələdiyyəyə layihənin dövlət əhəmiyyətli olduğunu və gecikmənin yolverilməz olduğunu bildirərək işlərin davam etdirilməsini tələb edin, sakinlərlə əlavə kommunikasiya aparmayın.", v: "ie" },
+                        { k: "C", t: "Sakinlərin şikayətini 'gözlənilən' adlandırın və heç bir tədbir görmədən işləri olduğu kimi davam etdirin, çünki layihə cədvəli prioritetdir.", v: "cp" },
+                        { k: "D", t: "Bələdiyyəyə üzr məktubu göndərin və gecə işlərini müvəqqəti dayandırmağı vəd edin, lakin daxili olaraq podratçıya işləri 'sakitcə' davam etdirməyi tapşırın.", v: "cp" },
+                        { k: "E", t: "Gecə işlərini 23:00-05:00 aralığına qısaldın (kiçik azalma), bələdiyyəyə bu tədbiri bildirin, lakin sakinlərlə birbaşa görüş təşkil etməyin.", v: "se" }
+                    ]
+                },
+                {
+                    qT: "Situasiya 3: Komanda Üzvünün Performans Problemi",
+                    qD: "Komandanızdaki Baş Mühəndis (Chief Engineer) son 2 aydır hesabatları vaxtında təqdim etmir və bir neçə dəfə texniki yoxlamalarda iştirak etməyib. O, layihənin başlanğıcından bəri komandadadır və texniki bilikləri yüksəkdir, lakin son müddətdə şəxsi problemləri olduğunu dolayı yolla bildirib. Digər mühəndislər onun yoxluğunda əlavə yük daşımalı olur və narazılıqlarını bildirirlər.",
+                    c: "Performans İdarəetməsi və Komanda Liderliyi",
+                    f: "rk",
+                    o: [
+                        { k: "A", t: "Baş Mühəndislə təklikdə, dəstəkləyici bir söhbət aparın - vəziyyəti anladığınızı bildirin, lazım olarsa müvəqqəti iş yükü azaldılması və ya HR-ın təklif etdiyi dəstək proqramlarından istifadə imkanını müzakirə edin, eyni zamanda komanda öhdəliklərinin minimum səviyyədə davam etməsi üçün konkret razılaşma əldə edin.", v: 1 },
+                        { k: "B", t: "Onun performansını rəsmi xəbərdarlıq prosesinə yönləndirin və şəxsi vəziyyətindən asılı olmayaraq tələblərə əməl etməsini tələb edin.", v: 4 },
+                        { k: "C", t: "Digər mühəndislər arasında onun vəzifələrini müvəqqəti bölüşdürün, ona heç nə demədən, vəziyyətin özbaşına düzələcəyini gözləyin.", v: 3 },
+                        { k: "D", t: "HR şöbəsinə məsələni yönləndirin və onlardan formal qiymətləndirmə prosesini başlatmalarını xahiş edin, özünüz birbaşa müdaxilə etməyin.", v: 2 }
+                    ]
+                },
+                {
+                    qT: "Situasiya 4: Büdcə Hesabatında Uyğunsuzluq",
+                    qD: "Aylıq maliyyə hesabatını hazırlayarkən maliyyə şöbəsindən gələn rəqəmlərlə sizin sahə qeydləriniz arasında 1.2 milyon manatlıq fərq aşkar edirsiniz. Bu fərq əsas tikinti materialları üçün ödənişlərlə bağlıdır. Hesabat sabah Agentlik Şurasına təqdim ediləcək və vaxt çox azdır.",
+                    c: "Maliyyə İdarəetməsi və Hesabatlılıq",
+                    f: "ml",
+                    o: [
+                        { k: "A", t: "Maliyyə şöbəsi ilə dərhal əlaqə saxlayın, uyğunsuzluğun mənbəyini araşdırın (məs. fakturalaşdırma vaxtı fərqi, ikiqat yazılış) və Şuraya təqdimatdan əvvəl dəqiq, izahlı rəqəmləri əldə etməyə çalışın; əgər vaxt yetmirsə, Şuraya uyğunsuzluğun aşkar edildiyini və 48 saat ərzində dəqiqləşdiriləcəyini şəffaf şəkildə bildirin.", v: "m" },
+                        { k: "B", t: "Sizin sahə qeydlərinizi 'daha dəqiq' hesab edərək, maliyyə şöbəsinin rəqəmlərini araşdırmadan öz rəqəmlərinizlə əvəz edin və hesabatı təqdim edin.", v: "i" },
+                        { k: "C", t: "Hesabatı maliyyə şöbəsinin rəqəmləri ilə olduğu kimi təqdim edin, uyğunsuzluğu qeyd etmədən, çünki vaxt yoxdur və 'kiçik' fərq kimi görünür.", v: "l" },
+                        { k: "D", t: "Şuraya hesabatın 'texniki səbəblərdən' təxirə salınmasını xahiş edin, uyğunsuzluğun səbəbini açıqlamadan.", v: "i" }
+                    ]
+                }
+            ]
+        },
+        {
+            b: "Ssenari 2",
+            t: "Regional Şöbə Müdiri (Sosial Müavinətlər Agentliyi)",
+            d: "Siz ölkə üzrə sosial müavinətlərin paylanmasına cavabdeh olan Dövlət Agentliyinin regional filialının Şöbə Müdirisiniz. Sizin tabeliyinizdə 45 nəfərlik komanda (qəbul mütəxəssisləri, qiymətləndirici mütəxəssislər, inzibati işçilər) var və regional ofis gündə orta hesabla 800 müraciəti emal edir. Son aylarda yeni rəqəmsal sənədləşmə sisteminin tətbiqi prosesi gedir və bu, həm işçilər, həm vətəndaşlar üçün keçid dövrü çətinlikləri yaradıb.",
+            qs: [
+                {
+                    qT: "Situasiya 1: Yeni Sistemə Keçiddə Müraciətlərin Yığılması",
+                    qD: "Yeni rəqəmsal sistemin tətbiqindən 3 həftə sonra müraciətlərin emal müddəti orta hesabla 40% artıb, çünki işçilərin əksəriyyəti hələ də köhnə və yeni sistemi paralel istifadə edir. Gözləmə siyahısında 1,200-dən çox vətəndaş var və bəziləri sosial mediada şikayət edib. Mərkəzi ofis sizdən izahat və həll planı tələb edir.",
+                    c: "Dəyişiklik İdarəetməsi və Əməliyyat Effektivliyi",
+                    f: "ml",
+                    o: [
+                        { k: "A", t: "Komandanı kiçik qruplara bölün, ən təcrübəli işçiləri 'sistem çempionları' kimi təyin edin ki, onlar həmkarlarına real vaxtda dəstək versinlər, paralel olaraq ən sadə/təkrarlanan müraciət növləri üçün sürətləndirilmiş 'fast-track' prosedur tətbiq edin və mərkəzi ofisə konkret tarixli yaxşılaşma planı təqdim edin.", v: "m" },
+                        { k: "B", t: "Bütün işçilərə köhnə sistemə qayıtmağı tapşırın ki, gecikmə aradan qalxsın, yeni sistemin tətbiqini 2 ay təxirə salın.", v: "i" },
+                        { k: "C", t: "Mərkəzi ofisə vəziyyətin 'normal keçid dövrü çətinliyi' olduğunu bildirin və əlavə tədbir görmədən, sistemin özbaşına 'oturuşmasını' gözləyin.", v: "l" },
+                        { k: "D", t: "İşçilərə əlavə iş saatları (qısamüddətli, ödənişsiz) işləməyi tapşırın ki, gözləmə siyahısı azalsın, sistem məsələsinə toxunmayın.", v: "i" }
+                    ]
+                },
+                {
+                    qT: "Situasiya 2: Komanda Üzvü Tərəfindən Etik Pozuntu Şübhəsi",
+                    qD: "Bir qiymətləndirici mütəxəssis tərəfindən təsdiqlənən müraciətlərin qeyri-mütənasib şəkildə eyni ailə üzvlərinə (uzaq qohumlarına) aid olduğunu fərq edirsiniz. Bu, müraciətlərin düzgün qiymətləndirildiyini göstərə bilər, lakin maraqlar münaqişəsi (conflict of interest) şübhəsi də doğurur. Sübutlar hələ qəti deyil.",
+                    c: "Etika və Şəffaflıq",
+                    f: "rk",
+                    o: [
+                        { k: "A", t: "Daxili audit/uyğunluq şöbəsinə məxfi şəkildə müraciət edərək, müvafiq müraciətlərin müstəqil yenidən nəzərdən keçirilməsini tələb edin, prosesin nəticəsinə qədər işçinin gələcək oxşar profilli müraciətlərə təyin edilməsini dayandırın (ittiham etmədən).", v: 1 },
+                        { k: "B", t: "İşçi ilə birbaşa, qeyri-rəsmi söhbət aparın və ondan ailə əlaqələri barədə soruşun, cavabından asılı olaraq qərar verin.", v: 3 },
+                        { k: "C", t: "Heç bir addım atmayın, çünki müraciətlər formal olaraq düzgün təsdiqlənib və 'şübhə' yetərli əsas deyil.", v: 4 },
+                        { k: "D", t: "İşçini dərhal başqa şöbəyə köçürün, heç bir izahat vermədən, məsələni 'sakitcə' bağlamaq üçün.", v: 2 }
+                    ]
+                },
+                {
+                    qT: "Situasiya 3: Maliyyə İli Sonu Hesabat Təzyiqi və Keyfiyyət",
+                    qD: "Maliyyə ilinin sonuna 2 həftə qalıb və regional ofisinizin illik 'emal edilmiş müraciət sayı' göstəricisi mərkəzi ofisin qoyduğu hədəfdən 8% aşağıdır. Komanda menecerlərindən biri təklif edir ki, mürəkkəb müraciətləri 'sadələşdirilmiş yoxlama' ilə sürətlə bağlayaraq rəqəmi yaxşılaşdırsınlar, baxmayaraq ki, bu, bəzi səhv qərarların riskini artıra bilər.",
+                    c: "Performans Hədəfləri və Keyfiyyət Balansı",
+                    f: "rt",
+                    o: [
+                        { k: "A", t: "Komanda menecerinə bildirin ki, keyfiyyət standartlarından geri çəkilmə qəbuledilməzdir; əvəzində, sadə/aşağı riskli müraciətlər üçün mövcud resursları yenidən bölüşdürərək son 2 həftədə təbii sürətlənməyə nail olmağa çalışın və mərkəzi ofisə real vəziyyəti və səbəblərini izah edən hesabat hazırlayın.", v: "ve" },
+                        { k: "B", t: "Təklifi qəbul edin və 'sadələşdirilmiş yoxlama' metodunu tətbiq edin ki, hədəfə çatılsın, riskin 'kiçik' olduğunu düşünün.", v: "ie" },
+                        { k: "C", t: "Hədəfə çatmaq üçün bütün müraciətlərin yoxlanma müddətini formal olaraq azaldın və komandaya 'sürəti artırın' tapşırığı verin, keyfiyyət nəzarətini gözardı edin.", v: "cp" },
+                        { k: "D", t: "Mərkəzi ofisə hədəfin 8% aşağı olacağını əvvəlcədən bildirin və səbəb kimi yalnız 'iş yükü' göstərin, keyfiyyət-sürət balansı barədə danışmayın.", v: "se" },
+                        { k: "E", t: "Komandaya əlavə həvəsləndirici (overtime) imkanı təklif edin ki, son 2 həftədə əlavə müraciət emal etsinlər, keyfiyyət standartlarını saxlamaqla.", v: "e" }
+                    ]
+                },
+                {
+                    qT: "Situasiya 4: İki Komanda Lideri Arasında Münaqişə",
+                    qD: "Sizin tabeliyinizdəki iki komanda lideri (Qəbul şöbəsi və Qiymətləndirmə şöbəsi) arasında işin keçidi (handover) prosesi ilə bağlı davamlı gərginlik var. Hər biri digərini 'düzgün format olmayan' sənədlər göndərməkdə günahlandırır və bu, gecikmələrə səbəb olur. Komanda üzvləri də bu gərginlikdən təsirlənərək iki qrupa bölünüb.",
+                    c: "Münaqişələrin Həlli və Komandalararası Əməkdaşlıq",
+                    f: "ml",
+                    o: [
+                        { k: "A", t: "Hər iki komanda liderini birgə görüşə çağırın, hər birinin perspektivini dinləyin, problemi 'kim haqlıdır' deyil 'proses harada pozulur' kimi çərçivələyin və birgə standart handover formatı/protokolu hazırlamalarını tələb edin, nəticəni bir həftə ərzində izləyin.", v: "m" },
+                        { k: "B", t: "Hər iki lideri ayrı-ayrılıqda dinləyin və hər birinə öz komandasının 'düzgün' olduğunu bildirərək, digər tərəfin dəyişməli olduğunu vurğulayın.", v: "l" },
+                        { k: "C", t: "Münaqişəni 'komandalar öz aralarında həll etsin' deyərək kənarda qalın, çünki bu, sizin birbaşa müdaxilə tələb edən məsələ deyil kimi görünür.", v: "i" },
+                        { k: "D", t: "Yalnız Qəbul şöbəsinin liderinə formatı dəyişdirməyi tapşırın, çünki o, daha az təcrübəlidir, Qiymətləndirmə liderinin tələblərinə uyğunlaşmasını gözləyin.", v: "i" }
+                    ]
+                }
+            ]
+        },
+        {
+            b: "Ssenari 3",
+            t: "Əməliyyatlar Meneceri (Dövlət Xəstəxanası - Tibbi Logistika)",
+            d: "Siz böyük dövlət xəstəxanasının Əməliyyatlar Şöbəsində Tibbi Logistika və Təchizat Meneceriniz. Sizin komandanız (28 nəfər) xəstəxananın bütün şöbələrinə tibbi ləvazimat, dərman və avadanlıq təchizatını təmin edir. Hazırda xəstəxana yeni bir cərrahiyyə korpusunun açılışına hazırlaşır və bu, təchizat zəncirinə əlavə yük gətirir. Siz Baş Həkim Müavininə (Deputy Medical Director) hesabat verirsiniz.",
+            qs: [
+                {
+                    qT: "Situasiya 1: Kritik Tibbi Ləvazimat Çatışmazlığı",
+                    qD: "Cümə günü axşam saatlarında anbar nəzarəti zamanı sizə məlum olur ki, əsas tədarükçü ilə müqavilə problemi səbəbindən bəzi kritik cərrahi ləvazimatların (sterilizasiya materialları) ehtiyatı yalnız 2 günlüyə kifayət edəcək. Bazar ertəsi planlaşdırılmış 14 əməliyyat var. Alternativ tədarükçü mövcuddur, lakin 15% baha qiymətə və yalnız bazar günü çatdırma mümkündür.",
+                    c: "Böhran İdarəetməsi və Risk Qiymətləndirməsi",
+                    f: "ml",
+                    o: [
+                        { k: "A", t: "Dərhal alternativ tədarükçü ilə əlaqə saxlayıb bazar günü çatdırılması üçün sifariş verin (qiymət fərqini sonra rəsmiləşdirin), eyni zamanda Baş Həkim Müavininə vəziyyəti və görülən tədbiri məlumat verin ki, ehtiyat planı (məs. bəzi əməliyyatların prioritetləşdirilməsi) hazır olsun.", v: "m" },
+                        { k: "B", t: "Əsas tədarükçü ilə müqavilə problemini həll etməyə çalışın və yalnız bu uğursuz olarsa, bazar günü alternativ tədarükçüyə müraciət edin - bu, vaxt itkisi riski yaradır.", v: "i" },
+                        { k: "C", t: "Mövcud ehtiyatın 'çatacağını' güman edib, bazar ertəsi səhər vəziyyətə yenidən baxmağı planlaşdırın, heç bir təcili sifariş etməyin.", v: "l" },
+                        { k: "D", t: "Cərrahiyyə şöbəsinə birbaşa zəng edib, 14 əməliyyatdan bir neçəsini özlərinin təxirə salmasını xahiş edin, təchizat məsələsini Baş Həkim Müavininə bildirmədən.", v: "i" }
+                    ]
+                },
+                {
+                    qT: "Situasiya 2: Büdcə Daxilində Prioritetləşdirmə",
+                    qD: "Yeni cərrahiyyə korpusunun açılışı üçün ayrılmış əlavə təchizat büdcəsi (450,000 manat) gözlənildiyindən 12% azdır. Sizin qarşınızda 4 əsas xərc kateqoriyası var: (1) əsas cərrahi alətlər (təhlükəsizlik kritikdir), (2) bir dəfəlik istifadə materialları (gündəlik ehtiyac), (3) monitorinq avadanlıqları (orta müddətli), (4) ofis/inzibati ləvazimatlar (aşağı prioritet). Açılışa 6 həftə qalıb.",
+                    c: "Resurs Bölgüsü və Prioritetləşdirmə",
+                    f: "rk",
+                    o: [
+                        { k: "A", t: "Əsas cərrahi alətləri (1) tam maliyyələşdirin, bir dəfəlik materialları (2) ilkin ehtiyac səviyyəsində təmin edin, monitorinq avadanlıqlarının (3) bir hissəsini icarə/lizinq variantı ilə əvəzləyin, ofis ləvazimatlarını (4) minimuma endirin və bütün dəyişiklikləri Baş Həkim Müavininə əsaslandırma ilə təqdim edin.", v: 1 },
+                        { k: "B", t: "Bütün 4 kateqoriyanın büdcəsini bərabər nisbətdə (hər biri 12%) azaldın ki, 'ədalətli' bölgü olsun.", v: 4 },
+                        { k: "C", t: "Yalnız (1) və (2) kateqoriyalarını maliyyələşdirin, (3) və (4) kateqoriyalarını tamamilə açılışdan sonraya saxlayın, monitorinq avadanlıqlarının olmamasının riskini qiymətləndirmədən.", v: 3 },
+                        { k: "D", t: "Baş Həkim Müavininə əlavə büdcə tələbi ilə müraciət edin və bu təsdiqlənənə qədər heç bir sifariş vermə, alış prosesini dayandırın.", v: 2 }
+                    ]
+                },
+                {
+                    qT: "Situasiya 3: Yeni Komanda Üzvünün Səhvi",
+                    qD: "İki ay əvvəl işə başlayan gənc logistika əməkdaşı anbar sisteminə məlumat daxil edərkən səhv edib və nəticədə bir neçə bölmədə tibbi ləvazimatların 'mövcud' kimi göstərilməsinə baxmayaraq, real ehtiyat tükənib. Bu, kiçik bir şöbədə qısamüddətli çatışmazlığa səbəb olub (kritik olmayan), lakin əməkdaş səhvi etiraf etməkdən qorxaraq sizə deyil, həmkarına danışıb və siz bunu təsadüfən eşitmisiniz.",
+                    c: "Komanda İnkişafı və Geri Bildirim Mədəniyyəti",
+                    f: "rt",
+                    o: [
+                        { k: "A", t: "Əməkdaşla təklikdə, qınamadan söhbət aparın - səhvi necə aşkar etdiyinizi deyil, nəticəni necə düzəltmək lazım olduğunu müzakirə edin, səhvlərin açıq bildirilməsinin niyə vacib olduğunu izah edin və sistemdə bu cür səhvlərin qarşısını almaq üçün əlavə yoxlama addımı (məs. ikinci nəfər təsdiqi) təklif edin.", v: "ve" },
+                        { k: "B", t: "Əməkdaşı bütün komanda qarşısında səhvi 'gizlətdiyinə' görə tənbeh edin ki, başqaları üçün ibrət olsun.", v: "ie" },
+                        { k: "C", t: "Heç nə deməyin, çünki problem 'kritik olmayan' şöbədə baş verib və artıq düzəlib; əməkdaşın özünü pis hiss etməsinin qarşısını alın.", v: "se" },
+                        { k: "D", t: "Məsələni HR-a rəsmi şikayət kimi yönləndirin, çünki səhvin 'gizlədilməsi' prosedur pozuntusudur.", v: "cp" },
+                        { k: "E", t: "Əməkdaşa yazılı xəbərdarlıq edin və anbar sisteminə girişini müvəqqəti məhdudlaşdırın ki, oxşar səhv təkrarlanmasın.", v: "ie" }
+                    ]
+                },
+                {
+                    qT: "Situasiya 4: Tədarükçü ilə Maraqlar Münaqişəsi Təklifi",
+                    qD: "Yeni cərrahiyyə korpusu üçün böyük həcmli (1.8 milyon manat) avadanlıq müqaviləsi üzərində danışıqlar gedir. Potensial tədarükçülərdən birinin nümayəndəsi sizə şəxsi olaraq 'minnətdarlıq hədiyyəsi' (bahalı saat) təqdim edir və 'əməkdaşlığın davam etməsini' arzulayır. Müqavilə qərarı tender komissiyası tərəfindən veriləcək, lakin siz komissiyaya texniki tövsiyə hazırlayan mütəxəssis kimi iştirak edirsiniz.",
+                    c: "Korporativ Etika və Maraqlar Münaqişəsi",
+                    f: "ml",
+                    o: [
+                        { k: "A", t: "Hədiyyəni nəzakətlə qəbul etməkdən imtina edin, vəziyyəti dərhal birbaşa rəhbərinizə və uyğunluq (compliance) şöbəsinə yazılı şəkildə bildirin və tender prosesindəki texniki tövsiyənizi yalnız obyektiv kriteriyalara əsaslanaraq davam etdirin.", v: "m" },
+                        { k: "B", t: "Hədiyyəni qəbul edin, lakin tender qərarına 'təsir etməyəcəyini' özünüzə təsdiqləyərək, məsələni heç kimə bildirməyin, çünki 'kiçik' hədiyyədir.", v: "l" },
+                        { k: "C", t: "Hədiyyəni rədd edin, lakin məsələni heç kimə bildirməyin, çünki artıq rədd etmisiniz və 'problem yoxdur' deyə düşünürsünüz.", v: "i" },
+                        { k: "D", t: "Hədiyyəni qəbul edib, sonradan onu xəstəxananın xeyriyyə fonduna bağışlayın, məsələni heç kimə bildirmədən, çünki 'düzgün' hərəkət etdiyinizi düşünürsünüz.", v: "i" }
+                    ]
+                }
+            ]
+        },
+        {
+            b: "Ssenari 4",
+            t: "Bölmə Müdiri (Vergilər Departamenti - Rəqəmsal Xidmətlər)",
+            d: "Siz Dövlət Vergilər Departamentinin Rəqəmsal Xidmətlər Bölməsinin Müdirisiniz. Sizin tabeliyinizdə 35 nəfər (proqram təminatı dəstəyi, vətəndaş xidmətləri call-center, məlumat analitikası komandaları) var. Departament hazırda vergi bəyannamələrinin onlayn təqdim edilməsi sisteminin böyük yenilənməsini (modernləşdirmə layihəsi) həyata keçirir və bu, 2.5 milyon vergi ödəyicisinə təsir edəcək. Layihənin icra müddəti 14 aydır və siz bu layihənin əməliyyat tərəfinə cavabdehsiniz.",
+            qs: [
+                {
+                    qT: "Situasiya 1: Sistem Sınağında Kritik Səhv Aşkarlanması",
+                    qD: "Yeni sistemin istifadəçi qəbulu testindən (UAT) 1 həftə əvvəl, sınaq mühitində bir səhv aşkarlanır: müəyyən gəlir kateqoriyasındakı vergi ödəyiciləri üçün sistem vergi məbləğini səhv hesablayır (yaklaşık 0.3% hallarda, lakin böyük məbləğlərə təsir edə bilər). Layihə komandası bildirir ki, səhvin düzəldilməsi 3 həftə tələb edir və bu, planlaşdırılan istifadəyə vermə tarixini gecikdirəcək. Departament Direktoru artıq açılış tarixini ictimaiyyətə elan edib.",
+                    c: "Risk İdarəetməsi və Qərarvermə Təzyiqi Altında",
+                    f: "ml",
+                    o: [
+                        { k: "A", t: "Direktora dərhal məlumat verin - səhvin potensial təsirini (neçə vergi ödəyicisinə, hansı məbləğdə) konkret rəqəmlərlə izah edin, 3 həftəlik düzəliş üçün təklif hazırlayın və ictimai elan tarixinin yenidən baxılması zərurətini əsaslandırın, alternativ olaraq sistemin 'fazalı' istifadəyə verilməsini (səhvdən təsirlənməyən kateqoriyalar üçün) təklif edin.", v: "m" },
+                        { k: "B", t: "Sistemi planlaşdırılan tarixdə istifadəyə verin və səhvi 'kiçik faiz' olduğu üçün sonradan 'patch' (yamaq) ilə düzəltməyi planlaşdırın, Direktora əvvəlcədən məlumat verməyin.", v: "l" },
+                        { k: "C", t: "Layihə komandasına 3 həftə əvəzinə 1 həftədə düzəliş etməyi tələb edin (əlavə resurs ayırmadan), Direktora hələlik heç nə deməyin, 'həll olunacaq' güman edin.", v: "i" },
+                        { k: "D", t: "Direktora yalnız 'kiçik texniki problemlər var, araşdırılır' deyin, dəqiq miqyası açıqlamadan, vaxt qazanmaq üçün.", v: "i" }
+                    ]
+                },
+                {
+                    qT: "Situasiya 2: Call-Center Komandasının İş Yükü Böhranı",
+                    qD: "Yeni sistemin qismən istifadəyə verilməsindən sonra call-center-ə daxil olan zəng sayı 3 dəfə artıb (gündə 450-dən 1,350-yə) və orta gözləmə vaxtı 25 dəqiqəyə çatıb. Komanda üzvləri (12 nəfər) əlavə iş yükündən şikayətlənir, bəziləri xəstəlik məzuniyyəti götürüb. Vətəndaşlar arasında narazılıq sosial mediada yayılır.",
+                    c: "Əməliyyat Davamlılığı və İşçi Dəstəyi",
+                    f: "rt",
+                    o: [
+                        { k: "A", t: "Tez vaxt ərzində ən çox təkrarlanan sualları müəyyənləşdirin və onlar üçün özünəxidmət (FAQ, chatbot, video təlimat) həlli hazırlayın ki, zəng həcmini azaltsın; paralel olaraq digər bölmələrdən müvəqqəti dəstək personalı cəlb edin və mövcud komandaya əlavə iş yükü görən kompensasiya (əlavə istirahət/maddi) təklif edin.", v: "ve" },
+                        { k: "B", t: "Komandaya 'bu, müvəqqəti dövrdür, dözün' deyin və heç bir əlavə resurs və ya dəstək təklif etmədən, vəziyyətin özbaşına normallaşmasını gözləyin.", v: "cp" },
+                        { k: "C", t: "Yalnız mövcud komandaya əlavə iş saatları (icbari overtime) təyin edin, özünəxidmət həlləri və ya əlavə resurs barədə düşünmədən.", v: "ie" },
+                        { k: "D", t: "Zəng sayının azalması üçün call-center-in iş saatlarını qısaldın (gündə 2 saat az), ki, işçilər 'dincəlsin', bu, gözləmə vaxtını daha da artıracaq.", v: "cp" },
+                        { k: "E", t: "Digər bölmələrdən 2-3 nəfəri müvəqqəti call-center-ə köçürün ki, yük azalsın, lakin özünəxidmət həlləri üzərində işləməyə başlamayın.", v: "se" }
+                    ]
+                },
+                {
+                    qT: "Situasiya 3: Komanda Liderinin Yeniliyə Müqaviməti",
+                    qD: "Sizin ən təcrübəli komanda liderlərinizdən biri (15 il təcrübəsi var) yeni sistemə keçidə açıq şəkildə müqavimət göstərir, yığıncaqlarda 'köhnə sistem daha yaxşı işləyirdi' deyə bəyanat verir və bu, komandanın digər üzvlərinə də mənfi təsir edir - bəziləri yeni alətləri öyrənməyə həvəssiz görünür. Bu liderin texniki bilikləri və komanda hörməti yüksəkdir.",
+                    c: "Dəyişikliyə Liderlik və Təsiretmə Bacarıqları",
+                    f: "rk",
+                    o: [
+                        { k: "A", t: "Komanda liderilə təklikdə görüş təyin edin, onun konkret narahatlıqlarını dinləyin (bəlkə də əsaslı texniki narahatlıqlar var), onu dəyişikliyin bəzi aspektlərinin formalaşmasına cəlb edin (məs. yeni proseslərin sınaqdan keçirilməsində 'pilot' rolu) ki, o, dəyişikliyin 'qurbanı' deyil, 'iştirakçısı' olsun.", v: 1 },
+                        { k: "B", t: "Onun açıq bəyanatlarına görə rəsmi xəbərdarlıq verin, çünki bu, komanda mənəviyyatına mənfi təsir edir.", v: 3 },
+                        { k: "C", t: "Onu nəzərə almayın və digər komanda üzvlərinə birbaşa müraciət edərək yeni sistemi öyrənmələrini tələb edin, liderin mövqeyini gözardı edin.", v: 4 },
+                        { k: "D", t: "Bütün komanda yığıncağında ümumi şəkildə 'dəyişikliyə açıq olmağın vacibliyini' vurğulayın, konkret olaraq həmin liderə müraciət etmədən.", v: 2 }
+                    ]
+                },
+                {
+                    qT: "Situasiya 4: Məlumatların Mühafizəsi (Data Privacy) Sızması Şübhəsi",
+                    qD: "Məlumat analitikası komandanızdaki bir əməkdaş test mühitində işləyərkən təsadüfən 50,000 vergi ödəyicisinin şəxsi məlumatlarını (ad, ünvan, gəlir məlumatları) ehtiva edən faylı şəxsi e-poçt ünvanına göndərib (iş üçün 'evdən təhlil etmək' niyyəti ilə, heç bir zərərli məqsəd olmadan). Əməkdaş bunu özü etiraf edib və faylı dərhal silib. Heç bir kənar tərəf məlumata çıxış əldə etməyib (yoxlanılıb).",
+                    c: "Məlumatların Mühafizəsi və İnsident İdarəetməsi",
+                    f: "ml",
+                    o: [
+                        { k: "A", t: "Hadisəni dərhal Departamentin Məlumatların Mühafizəsi vəzifəlisinə (DPO) rəsmi olaraq bildirin (tələb olunan bütün detallarla), əməkdaşın özünüitirafını və əməkdaşlığını qeyd edin, daxili protokola uyğun olaraq risk qiymətləndirməsi aparılmasını təmin edin və komandaya şəxsi məlumatlarla iş qaydaları üzrə əlavə təlim təşkil edin.", v: "m" },
+                        { k: "B", t: "Əməkdaş faylı artıq silib və 'heç bir ziyan dəyməyib' deyə hesab edərək, hadisəni heç kimə bildirməyin, daxili olaraq əməkdaşa şəxsi xəbərdarlıq edin.", v: "l" },
+                        { k: "C", t: "Əməkdaşı dərhal işdən kənarlaşdırın (suspendsiz icraat), çünki bu, 'ciddi pozuntu'dur, hadisəni DPO-ya bildirmədən öz qərarınızı tətbiq edin.", v: "i" },
+                        { k: "D", t: "Hadisəni yalnız öz birbaşa rəhbərinizə şəxsi söhbətdə bildirin, rəsmi DPO prosesini başlatmadan, 'yuxarıdan' göstəriş gözləyin.", v: "i" }
+                    ]
+                }
+            ]
+        }
+    ]
+},
+
+
+    
         {
             id: 7,
             title: "İmtahan 7 (Top-Menecment)",
